@@ -8,52 +8,18 @@
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.4/readable/bootstrap.min.css">
     <link rel="stylesheet" href="styles.css">
   </head>
-  <body ng-controller='MainCtrl'>
+  <body>
     <div class='container'>
       <h1 class='text-center'>(not)Reddit</h1>
-
-      <form class="form-horizontal well" ng-submit="addLink()">
-        <div class="form-group">
-          <label class="col-sm-2 control-label">Title</label>
-          <div class="col-sm-10">
-            <input ng-model="link.title" type="text" class="form-control" placeholder="Title">
-          </div>
-        </div>
-        <div class="form-group">
-          <label class="col-sm-2 control-label">URL</label>
-          <div class="col-sm-10">
-            <input ng-model="link.url" type="url" class="form-control" placeholder="URL">
-          </div>
-        </div>
-        <div class="form-group">
-          <label class="col-sm-2 control-label">Description</label>
-          <div class="col-sm-10">
-            <input ng-model="link.description" type="text" class="form-control" placeholder="Description">
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="col-sm-offset-2 col-sm-10">
-            <button type="submit" class="btn btn-default">add link</button>
-          </div>
-        </div>
-      </form>
-
-      <div class="media" ng-repeat="link in links">
-        <div class="media-left">
-          <a href="#">
-            <img class="media-object" src="..." alt="...">
-          </a>
-        </div>
-        <div class="media-body">
-          <h4 class="media-heading"><a href="{{link.url}}">{{link.title}}</a></h4>
-          {{link.description}}
-        </div>
-      </div>
+      <ng-view></ng-view>
     </div>
 
     <script src="/bower_components/jquery/dist/jquery.min.js"></script>
     <script src="/bower_components/angular/angular.js"></script>
+    <script src="/bower_components/angular-route/angular-route.js"></script>
     <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="script.js"></script>
+    <script src="ListCtrl.js"></script>
+    <script src="NewLinkCtrl.js"></script>
   </body>
 </html>

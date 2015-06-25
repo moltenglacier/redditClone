@@ -1,0 +1,12 @@
+<a href="#/new" class="btn btn-success">Add a new link</a>
+<div class="media" ng-repeat="link in links">
+  <div class="media-left">
+    <img class="media-object" src="..." alt="...">
+  </div>
+  <div class="media-body">
+    <h4 class="media-heading"><a href="{{link.url}}">{{link.title}}</a></h4>
+    <button ng-click="deleteLink($index)" class="btn btn-danger pull-right btn-xs">Delete</button>
+    {{link.description}}
+    <a href="#/show/{{$index}}">comments</a>
+  </div>
+</div>
